@@ -1,9 +1,7 @@
 # Login using mysql and nodejs
-Simple login app using node, passaport and mysql
+Simple login app using node, passaport and mysql followed by an attempt at 2FA using XUMM and an XRPL Address;
 
 Install:
-
-git clone https://github.com/PabloBInotto/Node_and_MYSQL_login
 
 cd Node_and_MYSQL_login
 
@@ -18,7 +16,9 @@ npm install
 
 npm start
 
-Open your browser and go to localhost: 5000
+Open your browser and go to localhost:3000
 
-![index page](https://github.com/PabloBInotto/Node_and_MYSQL_login/blob/master/public/index.PNG)
+may need to open port 3000 on the router to allow verification email through or change the email path.
+
+Please have your xumm app open when loggin in and the address entered at signup is the same as the account on XUMM.
 
