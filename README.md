@@ -3,7 +3,7 @@ Simple login page using node, passport, mysql and XUMM.
 
 Install:
 
-git clone https://github.com/......
+git clone https://github.com/rslater12/Node-MYSQL-XUMM-2FA
 
 cd to folder location
 
