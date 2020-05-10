@@ -12,7 +12,7 @@ cd to folder location
 
 npm install
 
-** NOTE ** Edit the /config/database.js using your settings to connect on you mysql.
+** NOTE ** Edit the /config/database.js using your settings to connect to your mysql.
 
 'host':'localhost', 'user':'root', 'password':''
 
