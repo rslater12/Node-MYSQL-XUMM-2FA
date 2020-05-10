@@ -1,6 +1,9 @@
 2FA Login using mysql, nodejs using XUMM/XRPL for 2FA Signin
 Simple login page using node, passport, mysql and XUMM.
 
+Example Video
+https://youtu.be/O1CITlkB8fY
+
 Install:
 
 git clone https://github.com/rslater12/Node-MYSQL-XUMM-2FA
@@ -16,6 +19,8 @@ npm install
 Edit the Nodemailer Settings
 
 passport.js auth: { user: '', pass: '' }
+
+If using Gmail, you will need to allow unauthroised apps in the security settings.
 
 app/routes.js
 
