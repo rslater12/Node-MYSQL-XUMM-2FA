@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <meta http-equiv="refresh" content="4; URL=http://localhost:3000/home" />
+ <meta http-equiv="refresh" content="4; URL=http://localhost:5000/profile" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
  <title>Xumm Authenticated</title>
@@ -35,14 +35,26 @@
           
     
 
-       <span id="auth" >Auth Successful!</span>
+      <span id="Auth" >Auth Successful!</span>
        
          
        
 </div>
- 
- 
- 
-</body>
+ <script src="/socket.io/socket.io.js"></script>
+<script>
+	
+      
 
+    var socket = io('http://localhost:5000');
+    
+	var web;
+    socket.on('auth', function (data) {
+    	
+    	document.getElementById('Auth').innerHTML=("XUMM Request Response: " + data + " You will be redirected on verification");
+
+    	web = data;
+    });
+    
+    </script>
+</body>
 </html>

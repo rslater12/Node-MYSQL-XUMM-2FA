@@ -23,7 +23,7 @@ module.exports = function(passport) {
       }else{
         connection.query("CREATE DATABASE IF NOT EXISTS 2FA", function (err, result) {
           if (err) throw err;
-          connection.query('USE xrpay', function(err){
+          connection.query('USE 2FA', function(err){
                 if(err) throw err;
                 console.log('\x1b[32m%s\x1b[0m',"The 2FA data base was created and the connection done")
 
@@ -31,7 +31,7 @@ module.exports = function(passport) {
                 sql +="`id` int(11) NOT NULL AUTO_INCREMENT,";
                 sql +=" `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,";
                 sql +=" `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,";
-		sql +=" `useraddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,";
+                sql +=" `useraddress` varchar(255) COLLATE utf8_unicode_ci NULL,";
                 sql +=" `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,";
                 sql +=" `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,";
                 sql +="`check_acc` INT(1) NOT NULL DEFAULT '0',";
@@ -49,7 +49,7 @@ module.exports = function(passport) {
 }
 async function funcaoDois() {
   await sleep(500);
-connection.query('USE xrpay');
+connection.query('USE 2FA');
 
  passport.serializeUser(function(user, done){
   done(null, user.id);
@@ -101,7 +101,7 @@ connection.query('USE xrpay');
 	        port: 587,
 	        secure: false, // use SSL
 	        auth: {
-	            user: '',
+	        	user: '',
 	            pass: ''
 	        }
 	    });
@@ -123,7 +123,7 @@ connection.query('USE xrpay');
 
 	      // HTML body
 	        html:'<p><b>Hello</b> '+ newUserMysql.username +' ! </p>'+
-	        '<p>Click <a href="http://localhost:3000/checkAccount?id='+result.insertId+'"> here </a> to check your NFC XRPL Retail account</p>'
+	        '<p>Click <a href="http://localhost:5000/checkAccount?id='+result.insertId+'"> here </a> to Authroise your Account</p>'
 	      };
 
 	      console.log('Sending Mail');

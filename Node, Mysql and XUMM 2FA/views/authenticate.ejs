@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <meta http-equiv="refresh" content="5; URL=http://localhost:3000/xummauth" />
+ <meta http-equiv="refresh" content="5; URL=http://localhost:5000/xummauth" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
  <title>Authenticating Sign In</title>
@@ -38,18 +38,13 @@
 	
       
 
-    var socket = io('http://localhost:3000');
+    var socket = io('http://localhost:5000');
     
 	var web;
-    socket.on('verify', function (data) {
-    	
+    socket.on('auth', function (data) {
     	
     	document.getElementById('name').innerHTML=("XUMM Login Request Response: " + data + " You will be redirected on verification");
-	
-    	
-   
-    
-    	
+
     	web = data;
     });
     

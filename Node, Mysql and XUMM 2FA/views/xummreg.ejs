@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
+ <meta http-equiv="refresh" content="20; URL=http://localhost:5000/xummgetadd" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="refresh" content="20; URL=http://localhost:5000/authenticate" />
  
- <title>Verify</title>
+ <title>Register 2FA</title>
  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
  <link rel="stylesheet" 
@@ -16,48 +16,37 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-
-
+   
+	
  <style>
-  body {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
-}
+  html{
+   padding:50px;
+  }
  </style>
 </head>
-<body id="page-top">
-
+<body>
 <div class="page-header text-center">
-<div> 
-
-<p>XUMM Two Factor Authentication Page</p> 
-
-</div>
   
  <img src="/images/xummlogo/xumm-logo.svg" class="img-fluid" alt="XUMM Logo"  width=150" height="150">
 	</div>			
-      
-  <div class="text-center">
-         
-    <span id="name" > XUMM Login Address</span>
-    <br></br>
-   
+             
+ <div class="container text-center">
+  <div class="col-sm-6 col-sm-offset-3">
+   <h3>Register your XUMM 2FA Address</h3>
+   <span id="name"></span>
     <br></br>
     
 <a href="https://xumm.app">
 
 
+
          <img id="image" alt="Xumm-QRcode" width=150" height="150">
       </a>
       <br></br>
-    </div>   
- 
+  </div>
+ </div>
 </body>
+
 <script src="/socket.io/socket.io.js"></script>
 <script>
 	
@@ -68,13 +57,17 @@ body {
 	var web;
     socket.on('QR', function (data) {
     	
+    	
+    	document.getElementById('name').src=("XUMM Register Request Response: Scan to add address to you Account for 2FA");
     	document.getElementById('image').src=(data);
-    	document.getElementById('name').innerHTML=(data);
-
+	
+    	
+   
+    
+    	
     	web = data;
     });
     
     </script>
-   
-    </html>
-    
+
+</html>
