@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var app = express();
 var port = process.env.PORT || 5000;
+var path = require('path')
 
 
 var passport = require('passport');
