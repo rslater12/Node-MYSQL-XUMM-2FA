@@ -7,6 +7,11 @@ Simple login page using node, passport, mysql and XUMM.
 Example Video
 https://youtu.be/O1CITlkB8fY
 
+Requires - Node, MySQL , Xumm App and Xumm Developer Account.
+
+https://apps.xumm.dev/ Developer Dashboard
+https://xumm.readme.io/ API Documentation
+
 Install:
 
 git clone https://github.com/rslater12/Node-MYSQL-XUMM-2FA
