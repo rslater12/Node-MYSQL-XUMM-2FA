@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="refresh" content="0; URL=http://localhost:3000/authenticate" /> 
+ 
+ <title>Verify</title>
+ <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+
+ <style>
+  body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+ </style>
+</head>
+<body id="page-top">
+
+<div class="page-header text-center">
+<div> 
+
+<p>XUMM Two Factor Authentication Page</p> 
+
+</div>
+  
+ <img src="/images/xummlogo/xumm-logo.svg" class="img-fluid" alt="XUMM Logo"  width=150" height="150">
+	</div>			
+      
+  <div class="text-center">
+         
+    <span id="name" > XUMM Login Address</span>
+    <br></br>
+   
+    <br></br>
+    
+<a href="https://xumm.app">
+
+
+         <img id="image" alt="Xumm-QRcode" width=150" height="150">
+      </a>
+      <br></br>
+    </div>   
+    <div class="text-center">
+      <span>Registration Expires in: </span>
+      <span id="countdown">300</span> second<span id="plural">s</span>
+      </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	
+      
+
+    var socket = io('http://localhost:3000');
+    
+	var web;
+    socket.on('QR', function (data) {
+    	
+    	document.getElementById('image').src=(data);
+    	document.getElementById('name').innerHTML=(data);
+
+    	web = data;
+    });
+    
+    var seconds = document.getElementById("countdown").textContent;
+    var countdown = setInterval(function() {
+        seconds--;
+        (seconds == 1) ? document.getElementById("plural").textContent = "": document.getElementById("plural").textContent = "s";
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0) clearInterval(countdown);
+    }, 1000);
+    </script>
+   
+    </html>
+    
