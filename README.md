@@ -1,3 +1,6 @@
+
+Updated to work on Websockets instead of continuously polling a API call. 
+
 2FA Login using mysql, nodejs using XUMM/XRPL for 2FA Signin
 Simple login page using node, passport, mysql and XUMM.
 
@@ -28,7 +31,7 @@ Xumm Developer API secret and Key required.
 
 npm start
 
-Open your browser and go to localhost: 5000
+Open your browser and go to localhost: 3000
 
 Requires you to have the XUMM app and an XRP Address.
 
